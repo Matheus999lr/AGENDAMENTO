@@ -1,0 +1,80 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #ffe6f2; /* Fundo rosa claro */
+    color: #333;
+}
+
+header {
+    text-align: center;
+    padding: 20px;
+    background-color: #ff66b3; /* Rosa forte */
+    color: #fff;
+}
+
+h1 {
+    font-size: 2em;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+section {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    width: 100%;
+    max-width: 400px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+    color: #ff3385;
+}
+
+input, select, button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ff66b3;
+    border-radius: 5px;
+    font-size: 1em;
+    outline: none;
+}
+
+input[type="date"], input[type="time"] {
+    color: #ff3385;
+}
+
+button {
+    background-color: #ff66b3;
+    color: #fff;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: #ff3385;
+}
+
+#message, #loginMessage, #deleteMessage {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+#adminCalendar h2, #bookingSection h2 {
+    color: #ff3385;
+}

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agendamento de Serviços</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+            color: #333;
+        }
+
+        header, footer {
+            background-color: #ff66b2; /* Cor rosa */
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        h2 {
+            margin-top: 0;
+            color: #ff66b2; /* Cor rosa para os títulos */
+        }
+
+        input, select, button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        button {
+            background-color: #ff66b2; /* Botões em rosa */
+            color: white;
+            border: none;
+        }
+
+        button:hover {
+            background-color: #ff3385; /* Efeito hover para os botões */
+        }
+
+        #bookingsContainer ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        #bookingsContainer li {
+            background-color: #f0f0f0;
+            padding: 8px;
+            margin-bottom: 5px;
+            border-radius: 4px;
+        }
+
+        #loginSection {
+            display: block;
+        }
+
+        #adminCalendar {
+            display: none;
+        }
+
+        #message {
+            text-align: center;
+            margin: 10px 0;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 14px;
+        }
+
+        .form-label {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Agendamento de Serviços</h1>
+    </header>
+
+    <div class="container">
+        <!-- Formulário para cliente -->
+        <h2>Agendar Serviço</h2>
+        <label for="clientName" class="form-label">Nome do Cliente:</label>
+        <input type="text" id="clientName" placeholder="Digite seu nome">
+
+        <label for="date" class="form-label">Data:</label>
+        <input type="date" id="date">
+
+        <label for="time" class="form-label">Horário:</label>
+        <input type="time" id="time">
+
+        <label for="service" class="form-label">Serviço:</label>
+        <select id="service">
+            <option value="Manutenção">Manutenção</option>
+            <option value="Extensão">Extensão</option>
+        </select>
+
+        <!-- Opções dinâmicas de manutenção -->
+        <div id="manutencaoOptions" style="display: none;">
+            <label for="manutencaoOption" class="form-label">Selecione o período de manutenção:</label>
+            <select id="manutencaoOption">
+                <option value="15 dias">15 dias</option>
+                <option value="21 dias">21 dias</option>
+            </select>
+        </div>
+
+        <button id="bookBtn">Agendar</button>
+
+        <p id="message"></p>
+        
+        <button id="viewBookingsBtn">Ver meus agendamentos</button>
+        
+        <div id="clientBookings"></div>
+    </div>
+
+    <div id="loginSection" class="container">
+        <h2>Área de Administrador</h2>
+        <label for="username" class="form-label">Usuário:</label>
+        <input type="text" id="username" placeholder="Digite seu nome de usuário">
+        
+        <label for="password" class="form-label">Senha:</label>
+        <input type="password" id="password" placeholder="Digite sua senha">
+        
+        <button id="loginBtn">Login</button>
+        <p id="loginMessage"></p>
+    </div>
+
+    <div id="adminCalendar" class="container">
+        <h2>Agendamentos</h2>
+        <div id="bookingsContainer"></div>
+
+        <button id="logoutBtn">Sair</button>
+        <button id="deleteBookingsBtn">Excluir Todos os Agendamentos</button>
+        <p id="deleteMessage"></p>
+    </div>
+
+    <footer>
+        <p>&copy; julianareis_beauty</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
